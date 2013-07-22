@@ -71,9 +71,9 @@
                         :buffer client-buffer-name)
   (sit-for 1))
 
-(defun connect-to-dyalog (port)
+(defun connect-to-dyalog (host port)
   (init-dyalog-remote-buffer)
-  (client-open 'local port))
+  (client-open host port))
 
 (defun client-close ()
   (delete-process (client-process)))
@@ -117,7 +117,9 @@
 (process-list)
 
 (client-close)
-(connect-to-dyalog 5005)
+(connect-to-dyalog 'local 5005)
+(connect-to-dyalog "192.168.122.71" 5005)
+
 
 (client-send-string "t")
 (client-send-stringln "2+5")
