@@ -32,11 +32,17 @@
       {}#.DRC.Close'XSrv' ⋄ ⎕←'Execute Server terminated.'
     ∇
 
-∇ load_conga_drc
-        :If 0=⎕NC '#.DRC'
-                'DRC' #.⎕CY 'conga'
-        :EndIf
-∇
+    ∇ load_conga_drc;path;loadConga
+      :If 0=⎕NC'#.DRC'
+          path←2 ⎕NQ'.' 'GetEnvironment' 'DYALOG'
+          loadConga←{'DRC'#.⎕CY path,⍵,'ws',⍵,'conga'}
+          :Trap 11
+              loadConga'/' ⍝ try to load Unix style ws
+          :Else
+              loadConga'\'
+          :EndTrap
+      :EndIf
+    ∇
 
     ∇ rx msg;rc;obj;event;rawData
       rc obj event rawData←4↑msg
