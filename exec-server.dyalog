@@ -44,7 +44,7 @@
       :EndIf
     ∇
 
-    ∇ rx msg;rc;obj;event;rawData
+    ∇ rx msg;rc;obj;event;rawData;cmd;res
       rc obj event rawData←4↑msg
       cmd←'UTF-8'⎕UCS rawData
       ⎕←ts,' ',cmd ⍝ why are the parenthesis needed?
