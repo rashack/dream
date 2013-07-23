@@ -137,8 +137,8 @@
 ;; )copy "C:\Program Files (x86)\Dyalog\Dyalog APL 12.1 Classic\ws\Conga" DRC
 
 ;; ⎕←⎕se.SALT.Load 'z:\exec-server'
-;; ⎕←⎕se.SALT.Load 'c:\src\dream\exec-server.dyalog'
-;; ⎕←⎕se.SALT.Load ((2 ⎕nq'.' 'getenvironment' 'HOME'),'/src/dream/exec-server.dyalog')
+;; ⎕←⎕se.SALT.Load 'x:\dream\exec-server.dyalog'
+;; ⎕←⎕se.SALT.Load ((2 ⎕nq'.' 'getenvironment' 'HOME'),'/src/cgm/dream/exec-server.dyalog')
 ;; execServer.start & 5005
 
 ;; CDONE←1
