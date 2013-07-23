@@ -47,7 +47,7 @@
     ∇ rx msg;rc;obj;event;rawData;cmd;res
       rc obj event rawData←4↑msg
       cmd←'UTF-8'⎕UCS rawData
-      ⎕←ts,' ',cmd ⍝ why are the parenthesis needed?
+      ⎕←ts,' ',cmd
 
       :Trap 0
           res←⍎cmd~⎕UCS 13 10
